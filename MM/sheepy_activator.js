@@ -3,7 +3,7 @@
 
 function onSheepy(cb) {
   var input = '';
-  var key = '7265778084698213';
+  var key = '837269698013';
   document.addEventListener('keydown', function (e) {
     input += ("" + e.keyCode);
     if (input === key) {
