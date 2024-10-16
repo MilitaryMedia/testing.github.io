@@ -1,90 +1,136 @@
-body{
-    background-color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-header{
-    padding: 10px;
+/* General reset for margins and padding */
+* {
     margin: 0;
-    background-color: rgb(68, 189, 236);
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 25px;
-    color: white;
-    border-radius: 20px;
-    box-shadow: 2px 2px 2px black;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+/* Body styling */
+body {
+    background-color: #f4f4f9;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
 }
-img{
-     box-shadow: 2px 2px 2px black;
+
+/* Header styling */
+header {
+    padding: 20px;
+    background-color: #d32f2f;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 28px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
-nav{
+
+/* Navigation styling */
+nav {
     padding: 10px;
-    background-color: rgb(32, 177, 235);
+    background-color: #c62828;
     color: white;
-    border-radius: 20px;
-    box-shadow: 2px 2px 2px black;
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 10px;
 }
-nav a{
+
+nav a {
     text-decoration: none;
-    margin: 0, 10px;
-
-}
-p{
-    background-color: gainsboro;
-    font-size: 20px;
-
-}
-#g{
-    background-color: gainsboro;
-    color: black;
-
-}
-#back{
-    float: right;
-
-
-}
-#back1{
-    background-color: crimson;
     color: white;
-
-}
-#SUlink{
-    background-color: lightskyblue;
-    font-size: xx-large;
-
-}
-button{
-    border-radius: 10px;
+    font-weight: bold;
+    margin: 0 15px;
+    transition: color 0.3s ease-in-out;
 }
 
-.secret-b{
-    background-color: white;
+nav a:hover {
+    color: #ffd54f;
+}
+
+/* Back button styling */
+#back1 {
+    background-color: #333;
     color: white;
-    border: 0px;
-    transition: 2s;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
 }
-.secret-b:hover{
-    background-color: white;
-    color: black;
+
+#back1:hover {
+    background-color: #555;
 }
+
+/* Paragraph styling */
+p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+    margin: 20px;
+}
+
+/* Collapsible content styling */
 details {
-      border-radius: 4px;
-      margin-bottom: 10px;
-    }
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
 
-    summary {
-      background-color: rgb(32, 177, 235);
-      padding: 10px;
-      cursor: pointer;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 15px;
+summary {
+    background-color: #d32f2f;
     color: white;
-    border-radius: 20px;
-    box-shadow: 2px 2px 2px black;
-    }
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
 
-    /* Style for the content inside the collapsible group */
-    div.collapsible-content {
-      padding: 10px;
-      background-color: gainsboro;
-    }
+div.collapsible-content {
+    padding: 15px;
+    background-color: #eeeeee;
+    border-radius: 8px;
+}
+
+/* Button styling */
+button {
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    background-color: #c62828;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #b71c1c;
+}
+
+/* Image styling */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+/* Footer styling */
+footer {
+    padding: 20px;
+    background-color: #212121;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
