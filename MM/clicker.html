@@ -3,7 +3,7 @@
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
         <meta charset="utf-8">
-        <link rel="icon" type="image/png" href="https://static-00.iconduck.com/assets.00/tank-icon-2048x2048-n1ajz0u5.png">
+        <link rel="icon" type="image/png" href="https://static-00.iconduck.com/assets.00/hamster-emoji-2048x1897-ccz0t29y.png">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
             <style>
@@ -39,6 +39,16 @@
     0% { transform: translate(-5px, 0px)}
     20% { transform: translate(0px, 0px)}
 }
+@keyframes tilter {
+    0% { transform: rotate(5deg)}
+    12% { transform: rotate(0deg)}
+    26% {transform: rotate(-5deg)}
+    40% {transform: rotate(-5deg)}
+}
+#Cage_ID {
+    animation: tilter 1s;
+    animation-iteration-count: infinite;
+}
 #mouse {
     /* Start the shake animation and make the animation last for 0.5 seconds */
   animation: clicker 1s;
@@ -46,10 +56,183 @@
 /* When the animation is finished, start again */
 animation-iteration-count: infinite;
 }                
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row {
+  display: flex;
+}
+
+/* Create two unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+.left {
+  width: 59%;
+  border: 3px solid BLACK;
+}
+
+.right {
+  width: 39%;
+  border: 3px solid black;
+}
+.tabcontent {
+      animation: fadeEffect 1s; /* Fading effect takes 1 second */
+    }
+    
+    /* Go from zero to full opacity */
+    @keyframes fadeEffect {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    .tab {
+      overflow: hidden;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+    }
+    
+    /* Style the buttons that are used to open the tab content */
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+    }
+    
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: rgb (21, 105, 216);
+    }
+    
+    /* Create an active/current tablink class */
+    .tab button.active {
+      background-color: #ccc;
+    }
+    
+    /* Style the tab content */
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+        .sidenav {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: #111;
+          overflow-x: hidden;
+          transition: 0.5s;
+          padding-top: 60px;
+        }
+        
+        .sidenav a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
+        }
+        
+        .sidenav a:hover {
+          color: #f1f1f1;
+        }
+        
+        .sidenav .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+        
+        @media screen and (max-height: 450px) {
+          .sidenav {padding-top: 15px;}
+          .sidenav a {font-size: 18px;}
+        }
+        .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
         </style>
   
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <title>Military Media | Clicker Game</title>
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <title>Hampter Clicker</title>
        <!-- <script>
         $(window).load(function() {      //Do the code in the {}s when the window has loaded 
             $("#loader").fadeOut("fast");  //Fade out the #loader div
@@ -58,44 +241,174 @@ animation-iteration-count: infinite;
     </head>
     <body style="text-align: center;">
    <!-- <div id="loader"><img src='loader.gif'></div> -->
+      <!-- <img  width="2000" height="2000" src="https://country1025.com/wp-content/uploads/sites/19/2023/09/GettyImages-1396578538-600x400-bf06395.jpg"> -->
         <header> 
-            <img onclick="secretMessageButton1(1)" style="float: left; border-radius: 3px;" width="100" height="100" src="https://static-00.iconduck.com/assets.00/tank-icon-2048x2048-n1ajz0u5.png" alt="Icon">
-            <h1 style="text-shadow: 0 0 5px #000000, 0 0 6px #000000;">Military Media</h1>
+            <img onclick="secretMessageButton1(1)" style="float: left; border-radius: 3px;" width="100" height="100" src="https://static-00.iconduck.com/assets.00/tank-icon-2048x2048-n1ajz0u5.png" alt="Tank Icon">
+            <div id="mySidenav" class="sidenav">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<button onclick="secretMessageButton1(100)">Add 100 clicks</button>
+<button onclick="secretMessageButton1(1000)">Add 1k clicks</button>
+<button onclick="secretMessageButton1(100000)">Add 100k clicks</button>
+<button onclick="secretMessageButton1(1e+100000000000)">Add infinite clicks</button>
+<button onclick="cheatAddCursor(10)">Buy 10 clickers</button>
+<button onclick="cheatAddCursor(100)">Buy 100 clickers</button>
+<button onclick="cheatAddCursor(1e+10000000)">Buy infinite clickers</button>
+<button onclick="cheatAddWheel(10)">Buy 10 wheels</button>
+<button onclick="cheatAddWheel(100)">Buy 100 wheels</button>
+<button onclick="cheatAddWheel(1e+10000000)">Buy infinite wheels</button>
+<button onclick="cheatAddCage(10)">Buy 10 cages</button>
+<button onclick="cheatAddCage(100)">Buy 100 cages</button>
+<button onclick="cheatAddCage(1e+1000000000000)">Buy infinite cages</button>
+<button onclick="cheatAddHouse(10)">Buy 10 houses</button>
+<button onclick="cheatAddHouse(100)">Buy 100 houses</button>
+<button onclick="cheatAddHouse(1e+1000000000000)">Buy infinite houses</button>
+<button onclick="cheatAddClickUPG(9)">Buy 9 Click Power Upgrades</button>
+<button onclick="cheatAddClickUPG(10)">Buy 10 Click Power Upgrades</button>
+<button onclick="cheatAddClickUPG(100)">Buy 100 Click Power Upgrades</button>
+<button onclick="cheatAddClickUPG(1e+1000000000000)">Buy infinite Click Power Upgrades</button>
+<button onclick="cheatAddClickerUPG(9)">Buy 9 Clicker Upgrades</button>
+<button onclick="cheatAddClickerUPG(10)">Buy 10 Clicker Upgrades</button>
+<button onclick="cheatAddClickerUPG(100)">Buy 100 Clicker Upgrades</button>
+<button onclick="cheatAddClickerUPG(1e+1000000000000)">Buy infinite Clicker Upgrades</button>
+
+
+
+            </div>
+            <h1 style="text-shadow: 0 0 5px #000000, 0 0 6px #000000;">Hammy Clicker<a id="back" href="https://militarymedia.github.io"><button id="back1">Back</button></a></h1>
         </header>
 
         <script src="buttonChanger.js"></script>
    <!-- <script src="sheepy_activator.js"></script> -->
+   
+   <div>
+   <div class="row" id="cursorBuy">     
+   <div class="column left">
+    <span id='sideNAV' style="font-size:30px;cursor:pointer; display: none; text-align: left;" onclick="openNav()">&#9776;</span>
+    <!--<div class="tab">
+      <button class="tablinks1" onclick="openCity1(event, 'click')" id='defaultOpen1'>Click</button>
+      <button class="tablinks1" onclick="openCity1(event, 'HammyHome')">HammyHome</button>
+      </div>
+      <div id="click" class="tabcontent1">-->
 
+   
+            <p><span id="clicks">you are at 0 clicks</span><br>
+                
+           
+               
+                <img id='hampter_clicker'  style="border-radius: 50%;" width="225" height="225" onclick="hamsterclick(1)" src="click-hampter.jpg">
+                <br>
+                <br>
+              <!--</div>
+              <div id="HammyHome" class="tabcontent1">
+                <p>Hammy Home level <span id="HammyLvl">1</span></p>
+                <iframe width="500" height="300" frameborder="0" src="https://hammyhome.com?hh=('names!%255B'apKc4Kwb1Kh3Kh'%255D~props!%255B('bp!'noneKbHPPPKx!-0.05J0.52~z!-25.76G0S~HE1DABBKbhQG-1.15~yQOBFBFBF*R*ADADAD*R*P7FMKwlQ.8947788025203809~nhQG0.75SOR'G-1J0.1~HL*MMI*L*LKo!'c1N2Nf%252CsnNh%252Cbe')%255D)*%252C%2523G)%252C('x!Hc!'%2523RPJ~y!-K'~LEC76R00N%252CcO~rzQ~HPFFQ!0RIMSJ1.5%2501SRQPONMLKJIHG*_"></iframe>
+              </div> -->
+            </div><!--column 1-->
+            <div class="column right">
+              <div class="tab">
+              <button class="tablinks" onclick="openCity(event, 'buy')" id='defaultOpen'>Buy Helpers</button>
+              <button class="tablinks" onclick="openCity(event, 'sell')" >Sell Helpers</button>
+              <button class="tablinks" onclick="openCity(event, 'UPG')" >Buy Upgrades</button>
+              </div>
+
+          <div id="buy" class="tabcontent" style="overflow-y:scroll;">  
+            <h2 style="text-align: center;">HELPERS</h2>  
+            <table>
+                    <tr>
+                        <td><button id="clickerBuy" onclick="buyCursor()"><span id="cursors" >0x</span><b><img id="mouse" src="https://m.media-amazon.com/images/I/61IHl1PNgPL._AC_UF894,1000_QL80_.jpg" width="55px" height="36px"><p id='cursor_img' > Clicker: $<span id="cursorCost">10</span></p></b></button></td>
+            </tr>
+            <tr>
+              <td><button id="wheelBuy" onclick="buyWheel()"><span id="wheel">0x</span><b><img id="hampter_gif" src="hamster_wheel.gif" width="110px" height="72px"><p id="wheel_img">Wheel: $<span id="wheelCost">100</span></p></b></button></td>
+            </tr>
+            <tr>
+              <td><button id="CageBuy" onclick="buyCage()"><span id="Cage">0x</span><b><img id="Cage_ID" src="hamster_cage.jpg" width="110px" height="72px"><p id="Cage_img">Cage: $<span id="CageCost">250</span></p></b></button></td>
+            </tr>
+            <tr>
+              <td><button id="houseBuy" onclick="buyhouse()"><span id="house">0x</span><b><img id="house_ID" src="https://m.media-amazon.com/images/I/614aNCLdx1L._AC_UF1000,1000_QL80_.jpg" width="110px" height="110px"><p id="house_img">House: $<span id="houseCost">500</span></p></b></button></td>
+            </tr>
+            <tr>
+              <td><button id="GodBuy" onclick="buyGod()"><span id="God">0x</span><b><img id="God_ID" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK_c18wObI6jlqNbi8H9l4coI8UVcWede1uQ&s" width="110px" height="110px"><p id="God_img">God: $<span id="GodCost">100,000</span></p></b></button></td>
+              </tr>
+            </table>
+          </div>
+
+          <div id="sell" class="tabcontent" style="overflow-y:scroll;">  
+            <h2 style="text-align: center;">SELL HELPERS</h2>
+            <br>
+            <button onclick="sellCursor()"><p>Sell Clicker</p><br><span id="sellCursorAmount">You do not own any cursors!</span></button>
+            <br>
+            <button onclick="sellwheel()"><p>Sell Wheel</p><br><span id="sellWheelAmount">You do not own any wheels!</span></button>
+            <br>
+            <button onclick="sellcage()"><p>Sell Cage</p><br><span id="sellCageAmount">You do not own any cages!</span></button>
+            <br>
+            <button onclick="sellhouse()"><p>Sell House</p><br><span id="sellhouseAmount">You do not own any houses!</span></button>
+            <br>
+            <button onclick="sellGod()"><p>Sell God</p><br><span id="sellGodAmount">You do not own any Gods!</span></button>
+            </div>
+          
+          <div id="UPG" class="tabcontent" style="overflow-y:scroll;">
+            <h2 style="text-align: center;">UPGRADES</h2>
+        
+
+            <button onclick="buyclickingupgrade()"><p>Click Power lvl <span id="clickpowerUPG">1</span></p>
+              <br>Cost: $<span id="clickpowerUPGcost">20</span>
+              <br>Each upgrade level increases click power by 1.
+            </button>
+            <br><br>
+    
+            <button onclick="buycursorMult()"><p>Cursor Power lvl <span id="cursorMultUPG">1</span></p>
+              <br>Cost: $<span id="cursorMultcost">110</span>
+              <br>Each upgrade level increases cursor output by 1.
+            </button>
+            <br><br>
+    
+            <button onclick="buywheelMult()"><p>Wheel Power lvl <span id="wheelMultUPG">1</span></p>
+              <br>Cost: $<span id="wheelMultcost">550</span>
+              <br>Each upgrade level increases wheel output by 1.
+            </button>
+            <br><br>
+
+            <button onclick="buycageMult()"><p>Cage Power lvl <span id="cageMultUPG">1</span></p>
+              <br>Cost: $<span id="cageMultcost">975</span>
+              <br>Each upgrade level increases cage output by 1.
+            </button>
+            <br><br>
+
+            <button onclick="buyhouseMult()"><p>House Power lvl <span id="houseMultUPG">1</span></p>
+              <br>Cost: $<span id="houseMultcost">1300</span>
+              <br>Each upgrade level increases house output by 1.
+            </button>
+            <br><br>
+
+                <button onclick="buyGodMult()"><p>God Power lvl <span id="GodMultUPG">1</span></p>
+                  <br>Cost: $<span id="GodMultcost">195,000</span>
+                  <br>Each upgrade level increases God output by 1.
+                </button>
+          </div>    
+               
             
-            <p id="Message" style="display: none;">No secret here. Nice try.</p>
-            <a href="https://static-00.iconduck.com/assets.00/tank-icon-2048x2048-n1ajz0u5.png" download=""><button id="secretButton1" style="display: none;">Press to see tank</button></a>
-            <p ><span id="clicks" style="display: none;">Yo good job. You hit </span>
-               <div id="cursorBuy" style="display: none;">
-                <img id='hampter_clicker' onclick="secretMessageButton1(1)" src="click-hampter.jpg">
-                <br>
-                <br>
-                <p style='display: none;' id=cursor_img>Clickers: <img id="mouse" src="https://m.media-amazon.com/images/I/61IHl1PNgPL._AC_UF894,1000_QL80_.jpg" width="55px" height="36px"><span id="cursors">0</span></p>
-                <p>Clicker Cost: <span id="cursorCost">10</span></p>
-                <button  id="clickerBuy" onclick="buyCursor()">Buy Clicker</button>
-                <br>
-                <br>
-                <p style="display: none;" id="wheel_img">Wheels: <img id="hampter_gif" src="hamster_wheel.gif" width="110px" height="72px"><span id="wheel">0</span></p>
-                <p>Wheel Cost: <span id="wheelCost">100</span></p>
-                <button id="wheelBuy" onclick="buyWheel()">Buy Wheel</button>
-                <br>
-                <br>
+            </div><!--column 2-->
+        </div>
+      </div>
+        <div><br>
+        
+        <br><br>
+        <!-- WARNING: I HAVE NOT UPDATED THE FORMAT OF THE ITEM TEMPLATE BELOW. WILL TRY TO REMEMBER TO DO LATER-->
                 <!--     The following is a template for a new item. ctrl + h and replace all "NEW_ITEM" in that section with the name for it. use the same name in the js file too or it will not work. also replace "NEW_IMG" with the url for the new image and the "NEW_IMG_ID" with the new id.-->
                 <!--
-                    
-                <button onclick="buyNEW_ITEM()">Buy NEW_ITEM</button>
                 <p style="display: none;" id="NEW_ITEM_img">NEW_ITEM: <img id="NEW_IMG_ID" src="NEW_IMG" width="55px" height="36px"><span id="NEW_ITEM">0</span></p>
-                <br>NEW_ITEM Cost: <span id="NEW_ITEMCost">100</span></p>    
+                <br>NEW_ITEM Cost: <span id="NEW_ITEMCost">100</span></p>
+                <button onclick="buyNEW_ITEM()">Buy NEW_ITEM</button>    
                 -->
                 <button onclick='save()'>Save(local)</button>
                 <button onclick='load()'>Load(local)</button>
-                <button onclick="export2txt()">Save(File)</button>
+                <button onclick="save2TXT()">Save(Code)</button>
+                <input type='text' id='TXTload'><button onclick="loadFromtxt()">Load(Code)</button>
+                <br>
+                <span id="txtSaveNotification"></span><br>
+                <span id="txtSave"></span>
            <!-- <button onclick="loadFile()">Load(File)</button> -->
-           <input type="file" name="inputfile" id="inputfile"><button onclick="importfile()">Load file</button>
+           <!--<input type="file" name="inputfile" id="inputfile"><button onclick="importfile()">Load file</button>-->
            <br>
        
           <!--<script type="text/javascript">
@@ -107,9 +420,98 @@ animation-iteration-count: infinite;
                        //fr.readAstext(this.files[0]);
                    })
            </script>-->
+           <script>
+            
+            function openCity(evt, buy) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+              tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+              tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(buy).style.display = "block";
+            evt.currentTarget.className += " active";
+            }
+
+            function openCity(evt, UPG) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+              tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+              tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(UPG).style.display = "block";
+            evt.currentTarget.className += " active";
+            }
+
+            function openCity(evt, sell) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+              tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+              tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(sell).style.display = "block";
+            evt.currentTarget.className += " active";
+            }
+
+            
+            function openCity1(evt, click) {
+            var i, tabcontent1, tablinks1;
+            tabcontent1 = document.getElementsByClassName("tabcontent1");
+            for (i = 0; i < tabcontent1.length; i++) {
+              tabcontent1[i].style.display = "none";
+            }
+            tablinks1 = document.getElementsByClassName("tablinks1");
+            for (i = 0; i < tablinks1.length; i++) {
+              tablinks1[i].className = tablinks1[i].className.replace(" active", "");
+            }
+            document.getElementById(click).style.display = "block";
+            evt.currentTarget.className += " active";
+            }
+
+            function openCity1(evt, HammyHome) {
+            var i, tabcontent1, tablinks1;
+            tabcontent1 = document.getElementsByClassName("tabcontent1");
+            for (i = 0; i < tabcontent1.length; i++) {
+              tabcontent1[i].style.display = "none";
+            }
+            tablinks1 = document.getElementsByClassName("tablinks1");
+            for (i = 0; i < tablinks1.length; i++) {
+              tablinks1[i].className = tablinks1[i].className.replace(" active", "");
+            }
+            document.getElementById(HammyHome).style.display = "block";
+            evt.currentTarget.className += " active";
+            }
+            </script>
+            <script>
+              // Get the element with id="defaultOpen" and click on it
+              document.getElementById("defaultOpen").click();
+              document.getElementById("defaultOpen1").click();
+              </script>
+
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+  </script>
         </div>
         <footer>
-            <h3>Anthony, Matthew, and Nick</h3>
+            <h3>Anthony, Matthew, Nick, and Hampterkannone</h3>
         </footer>
+      </div>
     </body>
 </html>
