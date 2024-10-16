@@ -365,7 +365,7 @@ window.setInterval(function(){
 window.setInterval(function(){
     secretMessageButton1(NEW_ITEM);
     }, TIME_PER_CLICK)
-*/
+*/ 
 function save2TXT(){
    
     var obj = new String(click + ',' + cursors + ',' + wheel + ',' + Cage + ',' + clickpower + ',CHECK!?,' + clickpowerUPGlvl + ',' + cursorMult + ',' + wheelMult + ',CHECKSTRING,' + cageMult + ',' + house + ',' + houseMult + ',' + God + ',' + GodMult);
