@@ -637,18 +637,30 @@ function checkAchievements() {
   if (click >= 100 && !achievements.includes("100 Clicks")) {
       addAchievement("100 Clicks");
   }
-  if (click >= 1000 && !achievements.includes("1000 Clicks")) {
-      addAchievement("1000 Clicks");
+  if (click >= 1000 && !achievements.includes("1,000 Clicks")) {
+      addAchievement("1,000 Clicks");
   }
   if (cursors >= 10 && !achievements.includes("10 Clickers")) {
       addAchievement("10 Clickers");
   }
-  if (wheel >= 5 && !achievements.includes("5 Wheels")) {
-      addAchievement("5 Wheels");
+  if (wheel >= 1 && !achievements.includes("First Wheel Purchased")) {
+      addAchievement("First Wheel Purchased");
   }
+  if (Cage >= 1 && !achievements.includes("First Cage Purchased")) {
+    addAchievement("First Cage Purchased");
+}
+if (wheel >= 1 && !achievements.includes("First Wheel Purchased")) {
+  addAchievement("First Wheel Purchased");
+}
+  if (wheel >= 5 && !achievements.includes("5 Wheels")) {
+    addAchievement("5 Wheels");
+}
   if (God >= 1 && !achievements.includes("First God Purchased")) {
       addAchievement("First God Purchased");
   }
+  if (cursors + wheel + Cage + house + God >= 100 && !achievements.includes("100 Helpers Owned")) {
+    addAchievement("100 Helpers Owned");
+}
 }
 
 // Add an achievement and show it in the UI
