@@ -36,6 +36,7 @@ var house = 0;
 var houseMult = 1;
 var God = 0;
 var GodMult = 1;
+let achievements = [];
 /* following is part of template just replace "NEW_ITEM" with new item name */
 /*
 var NEW_ITEM = 0;
@@ -49,8 +50,9 @@ function prettify(input){
 
 
 function hamsterclick(input){
-    click = click + input*clickpower;
-    document.getElementById("clicks").innerHTML = "you are at " + prettify(click) + " clicks.";
+  click = click + input * clickpower;
+  document.getElementById("clicks").innerHTML = "you are at " + prettify(click) + " clicks.";
+  checkAchievements();  // Check for achievements after each click
 }
 function sellCursor(){
     if(cursors>=1){ 
@@ -320,6 +322,16 @@ function buyNEW_ITEM(){
 */
 
 
+// Update achievements list in UI
+function updateAchievementsUI() {
+  achievementList.innerHTML = '';
+  achievements.forEach(achievement => {
+      let li = document.createElement("li");
+      li.innerText = achievement;
+      achievementList.appendChild(li);
+  });
+}
+
 
 
 
@@ -368,13 +380,11 @@ window.setInterval(function(){
 */ 
 function save2TXT(){
    
-    var obj = new String(click + ',' + cursors + ',' + wheel + ',' + Cage + ',' + clickpower + ',CHECK!?,' + clickpowerUPGlvl + ',' + cursorMult + ',' + wheelMult + ',CHECKSTRING,' + cageMult + ',' + house + ',' + houseMult + ',' + God + ',' + GodMult);
-    console.log(obj);
-    document.getElementById("txtSaveNotification").innerHTML = "The following is your savegame code.";
-    var base64EncodeString = btoa(obj);
-    document.getElementById("txtSave").innerHTML = base64EncodeString;
-    addNotificationLoad("Savegame code generated. Keep it safe!")
-  
+  var obj = `${click},${cursors},${wheel},${Cage},${clickpower},CHECK!?,${clickpowerUPGlvl},${cursorMult},${wheelMult},CHECKSTRING,${cageMult},${house},${houseMult},${God},${GodMult},${achievements.join('|')}`;
+  var base64EncodeString = btoa(obj);
+  document.getElementById("txtSaveNotification").innerHTML = "The following is your savegame code.";
+  document.getElementById("txtSave").innerHTML = base64EncodeString;
+  addNotificationLoad("Savegame code generated. Keep it safe!");
 }
 function save(){
     var save = {
@@ -390,7 +400,8 @@ function save(){
          house:house,
          houseMult:houseMult,
          God:God,
-         GodMult:GodMult// ADD COMMA WHEN ADD NEW ITEM BELOW
+         GodMult:GodMult,
+         achievements: achievements// ADD COMMA WHEN ADD NEW ITEM BELOW
          /*
          NEW_ITEM:NEW_ITEM 
          */
@@ -478,7 +489,8 @@ if (typeof savegame.wheel !== "undefined") wheel = savegame.wheel;
   var GodMultnextCost = Math.floor(150000 * Math.pow(1.3,GodMult));       //works out the cost of the next cursor
   document.getElementById('GodMultcost').innerHTML = prettify(GodMultnextCost);
    
-  
+  if (typeof savegame.achievements !== "undefined") achievements = savegame.achievements;
+    updateAchievementsUI();  // Update the UI with loaded achievements
 
   /* PART OF TEMPLATE, REPLACE "NEW_ITEM" WITH NEW ITEM NAME AND "STARTING_COST" WITH STARTING COST*/
   /*
@@ -609,6 +621,11 @@ if (typeof TXTsavegame[2] !==  "0") wheel = parseInt(TXTsavegame[2]);
   document.getElementById("GodMultUPG").innerHTML = GodMult;
   var GodMultnextCost = Math.floor(150000 * Math.pow(1.3,GodMult));       //works out the cost of the next cursor
   document.getElementById('GodMultcost').innerHTML = prettify(GodMultnextCost);
+
+  achievements = TXTsavegame[15] ? TXTsavegame[15].split('|') : [];
+        updateAchievementsUI();  // Update the UI with loaded achievements
+
+
   addNotificationLoad("Savegame loaded! Happy clicking!");
 }else{
     addNotificationLoad('Invalid save. Please do not tamper with the save codes.');
@@ -616,7 +633,46 @@ if (typeof TXTsavegame[2] !==  "0") wheel = parseInt(TXTsavegame[2]);
 }
 
 
-  
+function checkAchievements() {
+  if (click >= 100 && !achievements.includes("100 Clicks")) {
+      addAchievement("100 Clicks");
+  }
+  if (click >= 1000 && !achievements.includes("1000 Clicks")) {
+      addAchievement("1000 Clicks");
+  }
+  if (cursors >= 10 && !achievements.includes("10 Clickers")) {
+      addAchievement("10 Clickers");
+  }
+  if (wheel >= 5 && !achievements.includes("5 Wheels")) {
+      addAchievement("5 Wheels");
+  }
+  if (God >= 1 && !achievements.includes("First God Purchased")) {
+      addAchievement("First God Purchased");
+  }
+}
+
+// Add an achievement and show it in the UI
+function addAchievement(name) {
+  if (!achievements.includes(name)) {
+      achievements.push(name);
+
+      let li = document.createElement("li");
+      li.innerText = name;
+      achievementList.appendChild(li);
+
+      addNotificationLoad("Achievement unlocked: " + name + "!");
+  }
+}
+
+
+
+
+
+
+
+window.setInterval(checkAchievements, 1000);
+
+
   function onClickCode(cb) {
     var input = '';
     var key = '13161316';
